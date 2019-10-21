@@ -1,0 +1,26 @@
+# /etc/conf.d/zioscoind: config file for /etc/init.d/zioscoind
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/zioscoin/zioscoin.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/zioscoind"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/zioscoind.pid"
+
+# Where to write zioscoind data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/zioscoind"
+
+# User and group to own zioscoind process
+#BITCOIND_USER="zioscoin"
+#BITCOIND_GROUP="zioscoin"
+
+# Path to zioscoind executable
+#BITCOIND_BIN="/usr/bin/zioscoind"
+
+# Nice value to run zioscoind under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

@@ -1,0 +1,26 @@
+[Unit]
+Description=Zios Coin's distributed currency daemon
+After=network.target
+
+[Service]
+User=zioscoin
+Group=zioscoin
+
+Type=forking
+PIDFile=/var/lib/zioscoind/zioscoind.pid
+
+ExecStart=/usr/bin/zioscoind -daemon -pid=/var/lib/zioscoind/zioscoind.pid \
+          -conf=/etc/zioscoin/zioscoin.conf -datadir=/var/lib/zioscoind
+
+ExecStop=-/usr/bin/zioscoin-cli -conf=/etc/zioscoin/zioscoin.conf \
+         -datadir=/var/lib/zioscoind stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
